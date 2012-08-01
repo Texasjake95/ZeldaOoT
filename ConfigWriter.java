@@ -10,32 +10,71 @@ import net.minecraft.src.forge.Configuration;
 public class ConfigWriter
 {
 
+/**
+ * Adds a new Item Config line
+ *
+ * @param Config Name
+ * @param config
+ * @param default value
+ */
 public static int ItemConfig (String ItemName, Configuration config, int def)
 {
 return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CATEGORY_ITEM, def).value);
 }
 
-
+/**
+ * Adds a new Block Config line
+ *
+ * @param Config Name
+ * @param config
+ * @param default value
+ */
 public static int BlockConfig (String BlockName, Configuration config, int def)
 {
 return Integer.parseInt(config.getOrCreateBlockIdProperty(BlockName, def).value);
 }
 
+/**
+ * Adds a new Block Config line
+ *
+ * @param Config Name
+ * @param config
+ * @param default value
+ */
 public static int BlockConfig1 (String ItemName, Configuration config, int def)
 {
 return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CATEGORY_BLOCK, def).value);
 }
 
+/**
+ * Adds a new Boolean Config line
+ *
+ * @param Config Name
+ * @param config
+ * @param default value
+ */
 public static boolean BooleanConfig (String BooleanName, Configuration config, boolean def)
 {
 return Boolean.parseBoolean(config.getOrCreateBooleanProperty(BooleanName, Configuration.CATEGORY_GENERAL, def).value);
 }
 
+/**
+ * Makes new File for Config
+ *
+ * @param mod
+ */
 public static File GetFile(String mod)
 {
 return new File(Minecraft.getMinecraftDir() + "/config/" + mod + ".cfg");	
 }
 
+
+/**
+ * A Try/Catch function for unexpected results
+ *
+ * @param File
+ * @param Mod
+ */
 public static void ErrorCatcher(File newFile, String mod)
 {
 	try{

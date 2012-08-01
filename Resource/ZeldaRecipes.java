@@ -35,14 +35,33 @@ public class ZeldaRecipes {
 			  //TODO Add recipes for Razor and Guilded
 			AddonHandler.GetRecipes();
 	}
+	/**
+     * Add a Forge ShapedOre Recipe
+     *
+     * @param itemstack
+     * @param recipe
+     */
 	public static void ForgeOre(ItemStack itemstack, Object... recipe)
 	{
 		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(itemstack, recipe));
 	}
+	/**
+     * Add a Forge ShapelessOre Recipe
+     *
+     * @param itemstack
+     * @param recipe
+     */
 	public static void ForgeOreShapeless(ItemStack itemstack, Object... recipe)
 	{		
 		CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(itemstack, recipe));
 	}
+	/**
+     * Add a Meta Sensitive Smelting Recipe
+     *
+     * @param itemID
+     * @param meta
+     * @param itemstack
+     */
 	public static void MetaSmelt(int itemID, int meta, ItemStack itemstack)
 	{
 		FurnaceRecipes.smelting().addSmelting(itemID, meta, itemstack);
