@@ -130,43 +130,35 @@ public class Config extends ConfigWriter{
 	public static void initProps(String mod){
 
 		
-		File newFile = new File(Minecraft.getMinecraftDir() + "/config/" + mod + ".cfg");
+		File newFile = GetFile(mod);
 
 		
-		try{
-			newFile.createNewFile();
-			System.out.println("Successfully created/read configuration file"); 
-		}
-	
-		catch(IOException e){
-			System.out.println("Could not create configuration file for mod_ZeldaOoT. Reason:");
-			System.out.println(e);
-		}
+		ErrorCatcher(newFile, mod);
 
 		
 		config = new Configuration(newFile);
 
 		
 		config.load();
-		oreBlockBlockID = Integer.parseInt(config.getOrCreateBlockIdProperty("Ores",250).value);
-  	    swordMasterShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Master Sword",  Configuration.CATEGORY_ITEM, 8000).value);
-        GemsShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Emerald",  Configuration.CATEGORY_ITEM, 8001).value);
-        SpiritualStonesShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Spiritual Stones", Configuration.CATEGORY_ITEM, 8002).value);
-        ClothSheetShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Cloth Sheet",  Configuration.CATEGORY_ITEM, 8003).value);
-        swordKokiriShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Kokiri Sword",  Configuration.CATEGORY_ITEM, 8004).value);
-        swordGuildedShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Guilded Sword",  Configuration.CATEGORY_ITEM, 8005).value);
-        swordRazorShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Razor Sword",  Configuration.CATEGORY_ITEM, 8006).value);
-        helmetGZeldaShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Green Hood",  Configuration.CATEGORY_ITEM, 8007).value);
-        plateGZeldaShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Green Tunic",  Configuration.CATEGORY_ITEM, 8008).value);
-        legsGZeldaShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Tunic Leggings",  Configuration.CATEGORY_ITEM, 8009).value);
-        bootsGZeldaShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Boots",  Configuration.CATEGORY_ITEM, 8010).value);
-        plateRZeldaShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Red Tunic",  Configuration.CATEGORY_ITEM, 8011).value);
-        plateBZeldaShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Blue Tunic",  Configuration.CATEGORY_ITEM, 8012).value);
-        bootsBZeldaShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Iron Boots",  Configuration.CATEGORY_ITEM, 8013).value);
-        HeroBowShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Hero Bow",  Configuration.CATEGORY_ITEM, 8014).value);
-        OcarinaShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Ocarina of Time",  Configuration.CATEGORY_ITEM, 8015).value);
-        ArrowPowers = Boolean.parseBoolean(config.getOrCreateBooleanProperty("Arrow Powers", Configuration.CATEGORY_GENERAL, false).value);
-        ZeldaBombItemShiftedIndex = Integer.parseInt(config.getOrCreateIntProperty("Bomb",  Configuration.CATEGORY_ITEM, 8016).value);
+		oreBlockBlockID = BlockConfig("Ores",config, 250);
+  	    swordMasterShiftedIndex = ItemConfig("Master Sword", config, 8000);
+        GemsShiftedIndex = ItemConfig("Emerald",  config, 8001);
+        SpiritualStonesShiftedIndex = ItemConfig("Spiritual Stones", config, 8002);
+        ClothSheetShiftedIndex = ItemConfig("Cloth Sheet",  config, 8003);
+        swordKokiriShiftedIndex = ItemConfig("Kokiri Sword",  config, 8004);
+        swordGuildedShiftedIndex = ItemConfig("Guilded Sword",  config, 8005);
+        swordRazorShiftedIndex = ItemConfig("Razor Sword",  config, 8006);
+        helmetGZeldaShiftedIndex = ItemConfig("Green Hood",  config, 8007);
+        plateGZeldaShiftedIndex = ItemConfig("Green Tunic",  config, 8008);
+        legsGZeldaShiftedIndex = ItemConfig("Tunic Leggings",  config, 8009);
+        bootsGZeldaShiftedIndex = ItemConfig("Boots",  config, 8010);
+        plateRZeldaShiftedIndex = ItemConfig("Red Tunic",  config, 8011);
+        plateBZeldaShiftedIndex = ItemConfig("Blue Tunic",  config, 8012);
+        bootsBZeldaShiftedIndex = ItemConfig("Iron Boots",  config, 8013);
+        HeroBowShiftedIndex = ItemConfig("Hero Bow",  config, 8014);
+        OcarinaShiftedIndex = ItemConfig("Ocarina of Time",  config, 8015);
+        ArrowPowers = BooleanConfig("Arrow Powers", config, false);
+        ZeldaBombItemShiftedIndex = ItemConfig("Bomb",  config, 8016);
         
         config.save();
 	}
