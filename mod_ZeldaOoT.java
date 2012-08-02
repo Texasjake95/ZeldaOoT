@@ -116,7 +116,7 @@ public class mod_ZeldaOoT extends BaseMod
 		ZeldaNames.getNames();
 		
 		GetTextures();
-	
+		PlayerAPI.register("ZeldaPlayer", ZeldaPlayer.class);
 		
 		MinecraftForge.setBlockHarvestLevel(oreBlock, "pickaxe", 2);
 		ModLoader.registerKey(this, Switch, false);
