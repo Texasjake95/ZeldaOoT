@@ -81,35 +81,44 @@ public static void initAddons() {
 	}
 	if (addonsFound)
 		{ModLoader.getLogger().finer(getLogMessage("Done initializing addons"));
-		if(AddonHandler.RPW == false)
-		{
-			ModLoader.getLogger().finer(AddonHandler.getLogMessage("Gem Ores Initialized"));
-		}
-		if(AddonHandler.RPW == true)
-		{
-			ModLoader.getLogger().finer(AddonHandler.getLogMessage("Gem Ores Not Initialized"));
-		}
-		if (Config.IC2Copper == false & Config.RP2Copper == false)
-		{
-			ModLoader.getLogger().finer(AddonHandler.getLogMessage("Copper Ore Initialized"));
-		}
-		if (Config.IC2Copper == true || Config.RP2Copper == true)
-		{
-			ModLoader.getLogger().finer(AddonHandler.getLogMessage("Copper Ore Not Initialized"));
-		}
-		if (Config.IC2Tin == false & Config.RP2Tin == false)
-		{			
-			ModLoader.getLogger().finer(AddonHandler.getLogMessage("Tin Ore Initialized"));
-		}
-		if (Config.IC2Tin == true || Config.RP2Tin == true)
-		{
-			ModLoader.getLogger().finer(AddonHandler.getLogMessage("Tin Ore Not Initialized"));
-		}
+	
 		}
 	
 	else
 		ModLoader.getLogger().finer(getLogMessage("No addons for loaded mods found"));
+	
+	if(AddonHandler.RPW == false & Config.GemGen == true)
+	{
+		ModLoader.getLogger().finer(AddonHandler.getLogMessage("Gem Ores Initialized"));
+	}
+	
+	if(AddonHandler.RPW == true || Config.GemGen == false)
+	{
+		ModLoader.getLogger().finer(AddonHandler.getLogMessage("Gem Ores Not Initialized"));
+	}
+	
+	if (Config.IC2Copper == false & Config.RP2Copper == false & Config.CopperGen == true)
+	{
+		ModLoader.getLogger().finer(AddonHandler.getLogMessage("Copper Ore Initialized"));
+	}
+	
+	if (Config.IC2Copper == true || Config.RP2Copper == true || Config.CopperGen == false)
+	{
+		ModLoader.getLogger().finer(AddonHandler.getLogMessage("Copper Ore Not Initialized"));
+	}
+	
+	if (Config.IC2Tin == false & Config.RP2Tin == false & Config.TinGen == true)
+	{			
+		ModLoader.getLogger().finer(AddonHandler.getLogMessage("Tin Ore Initialized"));
+	}
+	
+	if (Config.IC2Tin == true || Config.RP2Tin == true || Config.TinGen == false)
+	{
+		ModLoader.getLogger().finer(AddonHandler.getLogMessage("Tin Ore Not Initialized"));
+	}
+
 }
+
 public static void EMC() {
 	ThaumCraft_AddOn.EMC();
 	

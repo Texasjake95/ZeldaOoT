@@ -40,6 +40,11 @@ public class Config extends ConfigWriter{
 	public static boolean RP2Copper = false;
 	public static boolean RP2Tin = false;
 	public static int ManaBarGuiId;
+	public static boolean GemGen;
+	public static boolean CopperGen;
+	public static boolean TinGen;
+	public static boolean NetherGen;
+	
 	
 	public static void initIC2Props(){
 		 File IC2Config = new File(Minecraft.getMinecraftDir(), "/config/IC2.cfg");
@@ -160,7 +165,17 @@ public class Config extends ConfigWriter{
         ArrowPowers = BooleanConfig("Arrow Powers", config, false);
         ZeldaBombItemShiftedIndex = ItemConfig("Bomb",  config, 8016);
         
+        GemGen = BooleanConfig("Gem Generation", config, true, 3, "World Gen");
+        CopperGen = BooleanConfig("Copper Generation", config, true, 3, "World Gen");
+        TinGen = BooleanConfig("Tin Generation", config, true, 3, "World Gen");
+        NetherGen = BooleanConfig("Nether Generation", config, true, 3, "World Gen");
+        
+        
+        
         config.save();
+        
 	}
+	
+	
 
 }

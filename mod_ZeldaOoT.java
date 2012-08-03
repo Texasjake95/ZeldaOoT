@@ -224,7 +224,7 @@ public class mod_ZeldaOoT extends BaseMod
 	}
 	public void generateSurface(World world, Random random, int chunkX, int chunkZ)
     {
-		if (AddonHandler.RPW == false)
+		if (AddonHandler.RPW == false & Config.GemGen == true)
 		   {
         for(int l = 0; l < 13; l++)
                  {
@@ -250,7 +250,7 @@ public class mod_ZeldaOoT extends BaseMod
 		   }
              
  
-		if (Config.IC2Copper == false & Config.RP2Copper == false)
+		if (Config.IC2Copper == false & Config.RP2Copper == false & Config.CopperGen == true)
 		{
 			for(int l = 0; l < 20; l++)
          {
@@ -261,7 +261,7 @@ public class mod_ZeldaOoT extends BaseMod
          }
 			
 		}
-		if (Config.IC2Tin == false & Config.RP2Tin == false)
+		if (Config.IC2Tin == false & Config.RP2Tin == false & Config.TinGen == true)
 		{
 			for(int l = 0; l < 20; l++)
          {
@@ -274,6 +274,9 @@ public class mod_ZeldaOoT extends BaseMod
 	}
 	public void generateNether(World world, Random random, int chunkX, int chunkZ)
     {
+		
+		if (Config.NetherGen == true)
+		{
 		//Nether Emerald
         for(int l = 0; l < 13; l++)
                  {
@@ -357,6 +360,7 @@ public class mod_ZeldaOoT extends BaseMod
 				 	int var8 = chunkZ + random.nextInt(16);
 				 	(new WorldGenNetherOreMeta(oreBlock.blockID, 15, 6)).generate(world, random, var6, var7, var8);
 		        }
+		}
 		       
 		
 	}

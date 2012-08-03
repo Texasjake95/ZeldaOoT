@@ -19,7 +19,7 @@ public class ConfigWriter
  */
 public static int ItemConfig (String ItemName, Configuration config, int def)
 {
-return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CATEGORY_ITEM, def).value);
+	return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CATEGORY_ITEM, def).value);
 }
 
 /**
@@ -31,7 +31,7 @@ return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CA
  */
 public static int BlockConfig (String BlockName, Configuration config, int def)
 {
-return Integer.parseInt(config.getOrCreateBlockIdProperty(BlockName, def).value);
+	return Integer.parseInt(config.getOrCreateBlockIdProperty(BlockName, def).value);
 }
 
 /**
@@ -43,7 +43,56 @@ return Integer.parseInt(config.getOrCreateBlockIdProperty(BlockName, def).value)
  */
 public static int BlockConfig1 (String ItemName, Configuration config, int def)
 {
-return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CATEGORY_BLOCK, def).value);
+	return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CATEGORY_BLOCK, def).value);
+}
+
+/**
+ * Adds a new Config line
+ * Used for Integers and is able to put in new categories
+ *
+ * @param Config Name
+ * @param config
+ * @param default value
+ * @param cat  0 = block 1 = item 2 = general 3 = new category
+ */
+public static int INTConfig (String ItemName, Configuration config, int def, int cat , String Category)
+{String SetCategory = null;
+	switch (cat)
+	{
+	case 0: SetCategory = Configuration.CATEGORY_BLOCK;
+	case 1: SetCategory = Configuration.CATEGORY_ITEM;
+	case 2: SetCategory = Configuration.CATEGORY_GENERAL;
+	case 3: SetCategory = Category;
+	}
+	
+	
+	return Integer.parseInt(config.getOrCreateIntProperty(ItemName, SetCategory, def).value);
+}
+
+
+
+/**
+ * Adds a new Config line
+ * Used for Booleans and is able to put in new categories
+ *
+ * @param Config Name
+ * @param config
+ * @param default value
+ * @param cat  0 = block 1 = item 2 = general 3 = new category
+ */
+
+public static boolean BooleanConfig (String BooleanName, Configuration config, boolean def, int cat , String Category)
+{String SetCategory = null;
+	switch (cat)
+	{
+	case 0: SetCategory = Configuration.CATEGORY_BLOCK;
+	case 1: SetCategory = Configuration.CATEGORY_ITEM;
+	case 2: SetCategory = Configuration.CATEGORY_GENERAL;
+	case 3: SetCategory = Category;
+	}
+	
+	
+	return Boolean.parseBoolean(config.getOrCreateBooleanProperty(BooleanName, SetCategory, def).value);
 }
 
 /**
@@ -55,7 +104,7 @@ return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CA
  */
 public static boolean BooleanConfig (String BooleanName, Configuration config, boolean def)
 {
-return Boolean.parseBoolean(config.getOrCreateBooleanProperty(BooleanName, Configuration.CATEGORY_GENERAL, def).value);
+	return Boolean.parseBoolean(config.getOrCreateBooleanProperty(BooleanName, Configuration.CATEGORY_GENERAL, def).value);
 }
 
 /**
@@ -65,8 +114,10 @@ return Boolean.parseBoolean(config.getOrCreateBooleanProperty(BooleanName, Confi
  */
 public static File GetFile(String mod)
 {
-return new File(Minecraft.getMinecraftDir() + "/config/" + mod + ".cfg");	
+	return new File(Minecraft.getMinecraftDir() + "/config/" + mod + ".cfg");	
 }
+
+
 
 
 /**
