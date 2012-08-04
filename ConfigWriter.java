@@ -8,6 +8,7 @@ import net.minecraft.src.Block;
 import net.minecraft.src.Item;
 import net.minecraft.src.ZeldaOoT.Resource.ItemMaps;
 import net.minecraft.src.forge.Configuration;
+import net.minecraft.src.forge.Property;
 
 public class ConfigWriter
 {
@@ -20,7 +21,7 @@ public class ConfigWriter
  */
 public static int ItemConfig (String ItemName, Configuration config, int def)
 {
-	return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CATEGORY_ITEM, def).value);
+	return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CATEGORY_ITEM, getItemID(def)).value);
 }
 
 /**
@@ -129,6 +130,7 @@ public static boolean AutoAssign(Configuration config)
 	if (autoAssign == true)
 	{
 		config.blockProperties.clear();
+		((Property)config.generalProperties.get("AutoAssign")).value = "false";
 	}
 	
 	return Boolean.parseBoolean(config.getOrCreateBooleanProperty("AutoAssign", Configuration.CATEGORY_GENERAL, false).value);
