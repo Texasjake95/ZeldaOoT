@@ -126,7 +126,9 @@ public static File GetFile(String mod)
 
 
 public static boolean AutoAssign(Configuration config)
-{boolean autoAssign = Boolean.parseBoolean(config.getOrCreateBooleanProperty("AutoAssign", Configuration.CATEGORY_GENERAL, false).value); ;
+{  
+	boolean autoAssign = Boolean.parseBoolean(config.getOrCreateBooleanProperty("AutoAssign", Configuration.CATEGORY_GENERAL, false).value); ;
+	 config.generalProperties.get("AutoAssign").comment = "Use this to Remap BlocksIDs USE WITH CAUTION CAN CORRUPT WORLDS";
 	if (autoAssign == true)
 	{
 		config.blockProperties.clear();
@@ -156,7 +158,7 @@ public static void ErrorCatcher(File newFile, String mod)
 	}	
 }
 
-public static int getBlockID(int def)
+private static int getBlockID(int def)
 {
 	for(int i = def; i < 4096; i++)
 	{
@@ -174,7 +176,7 @@ public static int getBlockID(int def)
 	}
 	return -1;
 }
-public static int getItemID(int def)
+private static int getItemID(int def)
 {
 	for(int i = def; i < 32000; i++)
 	{

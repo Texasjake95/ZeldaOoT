@@ -8,14 +8,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import net.minecraft.client.Minecraft;
-
 import net.minecraft.src.*;
 import net.minecraft.src.forge.*; 
 
 public class Config extends ConfigWriter{
 
 	public static Configuration config;
-	private static boolean autoAssign;
 	public static int oreBlockBlockID;
 	public static int swordMasterShiftedIndex;
 	public static int GemsShiftedIndex;
@@ -90,7 +88,6 @@ public class Config extends ConfigWriter{
 		        }
 		}
 	
-	
 	public static void initRP2Props()
 	{File RP2Config = new File(Minecraft.getMinecraftDir(), "redpower/redpower.cfg");
 	try
@@ -145,7 +142,7 @@ public class Config extends ConfigWriter{
 
 		config.blockProperties.clear();
 		config.load();
-		autoAssign = AutoAssign(config);
+		AutoAssign(config);
 		oreBlockBlockID = BlockConfig("Ores",config, 1);
   	    swordMasterShiftedIndex = ItemConfig("Master Sword", config, 8000);
         GemsShiftedIndex = ItemConfig("Emerald",  config, 8001);
