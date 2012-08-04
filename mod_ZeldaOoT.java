@@ -104,7 +104,11 @@ public class mod_ZeldaOoT extends BaseMod
 		return "Beta 1.0.0 for Minecraft 1.2.5";
 	}
 	@Override
-	
+	 public String getPriorities()
+    {
+        return "after:*";
+    }
+
 	public void load() 
 	{		 
 		 //new ZeldaUpdateHandler(this);

@@ -15,7 +15,7 @@ import net.minecraft.src.forge.*;
 public class Config extends ConfigWriter{
 
 	public static Configuration config;
-	private static boolean autoAssign = true;
+	private static boolean autoAssign;
 	public static int oreBlockBlockID;
 	public static int swordMasterShiftedIndex;
 	public static int GemsShiftedIndex;
@@ -143,9 +143,10 @@ public class Config extends ConfigWriter{
 		
 		config = new Configuration(newFile);
 
-		
+		config.blockProperties.clear();
 		config.load();
-		oreBlockBlockID = BlockConfig("Ores",config, 250);
+		autoAssign = AutoAssign(config);
+		oreBlockBlockID = BlockConfig("Ores",config, 1);
   	    swordMasterShiftedIndex = ItemConfig("Master Sword", config, 8000);
         GemsShiftedIndex = ItemConfig("Emerald",  config, 8001);
         SpiritualStonesShiftedIndex = ItemConfig("Spiritual Stones", config, 8002);
