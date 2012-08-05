@@ -8,10 +8,14 @@ import net.minecraft.src.Block;
 import net.minecraft.src.Item;
 import net.minecraft.src.ZeldaOoT.Resource.ItemMaps;
 import net.minecraft.src.forge.Configuration;
+import net.minecraft.src.forge.MinecraftForge;
 import net.minecraft.src.forge.Property;
 
 public class ConfigWriter
-{
+{static boolean autoAssign;
+static String MODNAME;
+static File MODFILE;
+static int BlockID;
 /**
  * Adds a new Item Config line
  *
@@ -21,7 +25,7 @@ public class ConfigWriter
  */
 public static int ItemConfig (String ItemName, Configuration config, int def)
 {
-	return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CATEGORY_ITEM, getItemID(def)).value);
+	return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CATEGORY_BLOCK, getItemID(def)).value);
 }
 
 /**
@@ -32,8 +36,8 @@ public static int ItemConfig (String ItemName, Configuration config, int def)
  * @param default value
  */
 public static int BlockConfig (String BlockName, Configuration config, int def)
-{
-	return Integer.parseInt(config.getOrCreateBlockIdProperty(BlockName, getBlockID(def)).value);
+{BlockID = Integer.parseInt(config.getOrCreateBlockIdProperty(BlockName, getBlockID(def, BlockName)).value);
+	return Integer.parseInt(config.getOrCreateBlockIdProperty(BlockName, getBlockID(def, BlockName)).value);
 }
 
 /**
@@ -43,9 +47,9 @@ public static int BlockConfig (String BlockName, Configuration config, int def)
  * @param config
  * @param default value
  */
-public static int BlockConfig1 (String ItemName, Configuration config, int def)
+public static int BlockConfig1 (String BlockName, Configuration config, int def)
 {
-	return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CATEGORY_BLOCK, getBlockID(def)).value);
+	return Integer.parseInt(config.getOrCreateIntProperty(BlockName, Configuration.CATEGORY_BLOCK, getBlockID(def, BlockName)).value);
 }
 
 /**
@@ -70,7 +74,7 @@ public static int INTConfig (String ItemName, Configuration config, int def, int
 	
 	switch (Type)
 	{
-	case 0: newDef = getBlockID(def);
+	case 0: newDef = getBlockID(def, ItemName);
 	case 1: newDef = getItemID(def);
 	}
 	return Integer.parseInt(config.getOrCreateIntProperty(ItemName, SetCategory, newDef).value);
@@ -119,15 +123,17 @@ public static boolean BooleanConfig (String BooleanName, Configuration config, b
  *
  * @param mod
  */
-public static File GetFile(String mod)
+private static File GetFile(String mod)
 {
+	MODNAME = mod;
+	MODFILE = new File(Minecraft.getMinecraftDir() + "/config/" + mod + ".cfg");	
 	return new File(Minecraft.getMinecraftDir() + "/config/" + mod + ".cfg");	
 }
 
 
 public static boolean AutoAssign(Configuration config)
 {  
-	boolean autoAssign = Boolean.parseBoolean(config.getOrCreateBooleanProperty("AutoAssign", Configuration.CATEGORY_GENERAL, false).value); ;
+	autoAssign = Boolean.parseBoolean(config.getOrCreateBooleanProperty("AutoAssign", Configuration.CATEGORY_GENERAL, true).value); ;
 	 config.generalProperties.get("AutoAssign").comment = "Use this to Remap BlocksIDs USE WITH CAUTION CAN CORRUPT WORLDS";
 	if (autoAssign == true)
 	{
@@ -145,7 +151,7 @@ public static boolean AutoAssign(Configuration config)
  * @param File
  * @param Mod
  */
-public static void ErrorCatcher(File newFile, String mod)
+private static void ErrorCatcher(File newFile, String mod)
 {
 	try{
 		newFile.createNewFile();
@@ -158,24 +164,48 @@ public static void ErrorCatcher(File newFile, String mod)
 	}	
 }
 
-private static int getBlockID(int def)
-{
+private static int getBlockID(int def, String BlockName)
+{int id = -1;
+	
+	
+if (autoAssign)
+		{
+	if(Block.blocksList[def] == null)
+	{
+		id = def;
+	}
+	else{
 	for(int i = def; i < 4096; i++)
 	{
 		if(Block.blocksList[i] == null & Item.itemsList[i] == null)
 		{
-			return i;
+			return id = i;
 		}
 	}
 	for(int i = def - 1; i > 0; i--)
 	{
 		if(Block.blocksList[i] == null & Item.itemsList[i] == null)
 		{
-			return i;
+			return id = i;
 		}
 	}
-	return -1;
+	
+		}
+		}
+	if (!autoAssign)
+	{
+		id = BlockID;
+		if (Block.blocksList[id] != null)
+		{MinecraftForge.killMinecraft(MODNAME, "Block "+BlockName+" conflicts with "+Block.blocksList[id]+""+ " please set Auto Assign to true");}
+	}
+	
+	if (id == -1)
+		{MinecraftForge.killMinecraft(MODNAME, "Not Enough BlockIDs");}
+	
+	
+	return id;
 }
+
 private static int getItemID(int def)
 {
 	for(int i = def; i < 32000; i++)
@@ -185,7 +215,7 @@ private static int getItemID(int def)
 			return i;
 		}
 	}
-	for(int i = def - 1; i > 0; i--)
+	for(int i = def; i > 0; i--)
 	{
 		if (Item.itemsList[i] == null)
 		{
@@ -194,4 +224,11 @@ private static int getItemID(int def)
 	}
 	return -1;
 }
+public static Configuration CreateConfig(String mod)
+{
+File newFile = GetFile(mod);
+ErrorCatcher(newFile, mod);
+return new Configuration(newFile);
+}
+
 }

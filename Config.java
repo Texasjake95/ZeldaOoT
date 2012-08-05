@@ -132,21 +132,14 @@ public class Config extends ConfigWriter{
 	public static void initProps(String mod){
 
 		
-		File newFile = GetFile(mod);
+		config = CreateConfig(mod);
 
-		
-		ErrorCatcher(newFile, mod);
-
-		
-		config = new Configuration(newFile);
-
-		config.blockProperties.clear();
 		config.load();
 		AutoAssign(config);
 		oreBlockBlockID = BlockConfig("Ores",config, 1);
   	    swordMasterShiftedIndex = ItemConfig("Master Sword", config, 8000);
-        GemsShiftedIndex = ItemConfig("Emerald",  config, 8001);
-        SpiritualStonesShiftedIndex = ItemConfig("Spiritual Stones", config, 8002);
+        GemsShiftedIndex = ItemConfig("Emerald",  config, 8000);
+        SpiritualStonesShiftedIndex = ItemConfig("Spiritual Stones", config, 8000);
         ClothSheetShiftedIndex = ItemConfig("Cloth Sheet",  config, 8003);
         swordKokiriShiftedIndex = ItemConfig("Kokiri Sword",  config, 8004);
         swordGuildedShiftedIndex = ItemConfig("Guilded Sword",  config, 8005);
