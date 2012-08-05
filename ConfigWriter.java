@@ -25,7 +25,7 @@ static int BlockID;
  */
 public static int ItemConfig (String ItemName, Configuration config, int def)
 {
-	return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CATEGORY_BLOCK, getItemID(def)).value);
+	return Integer.parseInt(config.getOrCreateIntProperty(ItemName, Configuration.CATEGORY_ITEM, getItemID(def)).value);
 }
 
 /**
