@@ -43,8 +43,8 @@ public class Config extends ConfigWriter{
 	public static boolean TinGen;
 	public static boolean NetherGen;
 	
-	
-	public static void initIC2Props(){
+		public static void initIC2Props()
+	{
 		 File IC2Config = new File(Minecraft.getMinecraftDir(), "/config/IC2.cfg");
 		
 		
@@ -130,8 +130,7 @@ public class Config extends ConfigWriter{
 	        }
 	}
 	public static void initProps(String mod){
-
-		
+	
 		config = CreateConfig(mod);
 
 		config.load();
@@ -160,11 +159,9 @@ public class Config extends ConfigWriter{
         CopperGen = BooleanConfig("Copper Generation", config, true, 3, "World Gen");
         TinGen = BooleanConfig("Tin Generation", config, true, 3, "World Gen");
         NetherGen = BooleanConfig("Nether Generation", config, true, 3, "World Gen");
-        
-        
-        
+     
         config.save();
-        
+      
 	}
 	
 	

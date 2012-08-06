@@ -21,7 +21,8 @@ public class mod_ZeldaOoT extends BaseMod
 		int index =  j*16+i;
 		return index;
 	}
-	public static KeyBinding Switch = new KeyBinding("Switch", 19);   
+	public static KeyBinding Switch = new KeyBinding("Switch", 19);
+	public static KeyBinding ShowMana = new KeyBinding("Show Mana", 50);
 	public void keyboardEvent(KeyBinding keybinding)
 	    {World world = mc.theWorld;
 	   ItemStack itemStack = mc.thePlayer.inventory.getCurrentItem();
@@ -94,6 +95,11 @@ public class mod_ZeldaOoT extends BaseMod
 	    		}
 	    }
 	    }
+	    
+	    else if (keybinding == ShowMana)
+	    {
+	    	mc.thePlayer.addChatMessage("Current Mana: "+ZeldaPlayer.Mana.getCurrentMana()+"");
+	    }
 	    }
 		
 	
@@ -124,7 +130,9 @@ public class mod_ZeldaOoT extends BaseMod
 		
 		MinecraftForge.setBlockHarvestLevel(oreBlock, "pickaxe", 2);
 		ModLoader.registerKey(this, Switch, false);
-	    ModLoader.addLocalization("Switch", "Switch");
+		ModLoader.registerKey(this, ShowMana, false);
+		ModLoader.addLocalization("Switch", "Switch");
+	    ModLoader.addLocalization("ShowMana", "Show Mana");
 	    ModLoader.setInGameHook(this, true, true);
 	    ModLoader.setInGUIHook(this, true, true);
 	}

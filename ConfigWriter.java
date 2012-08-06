@@ -6,7 +6,6 @@ import java.io.IOException;
 import net.minecraft.client.Minecraft;
 import net.minecraft.src.Block;
 import net.minecraft.src.Item;
-import net.minecraft.src.ZeldaOoT.Resource.ItemMaps;
 import net.minecraft.src.forge.Configuration;
 import net.minecraft.src.forge.MinecraftForge;
 import net.minecraft.src.forge.Property;
@@ -76,6 +75,7 @@ public static int INTConfig (String ItemName, Configuration config, int def, int
 	{
 	case 0: newDef = getBlockID(def, ItemName);
 	case 1: newDef = getItemID(def);
+	case 2: newDef = def;
 	}
 	return Integer.parseInt(config.getOrCreateIntProperty(ItemName, SetCategory, newDef).value);
 }
@@ -230,5 +230,7 @@ File newFile = GetFile(mod);
 ErrorCatcher(newFile, mod);
 return new Configuration(newFile);
 }
+
+
 
 }
