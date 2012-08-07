@@ -46,7 +46,7 @@ public class ItemMaps {
 	                      {
 		 swordMaster.shiftedIndex,
 		 Gems.shiftedIndex,
-		 //SpiritualStones.shiftedIndex,
+		 SpiritualStones.shiftedIndex,
 		 ClothSheet.shiftedIndex,
 		 swordKokiri.shiftedIndex,
 		 //swordGuilded.shiftedIndex,
@@ -65,7 +65,7 @@ public class ItemMaps {
 	                                   {
 		 swordMasterEMC,
 		 GemsEMC,
-		 //SpiritualStonesEMC,
+		 SpiritualStonesEMC,
 		 ClothSheetEMC,
 		 swordKokiriEMC,
 		 //swordGuildedEMC,
