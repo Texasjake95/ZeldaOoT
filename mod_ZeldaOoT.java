@@ -126,10 +126,6 @@ public class mod_ZeldaOoT extends BaseMod
 		PlayerAPI.register("ZeldaPlayer", ZeldaPlayer.class);
 		
 		MinecraftForge.setBlockHarvestLevel(oreBlock, "pickaxe", 2);
-		ModLoader.registerKey(this, Switch, false);
-		ModLoader.registerKey(this, ShowMana, false);
-		ModLoader.addLocalization("Switch", "Switch");
-	    ModLoader.addLocalization("ShowMana", "Show Mana");
 	    ModLoader.setInGameHook(this, true, true);
 	    ModLoader.setInGUIHook(this, true, true);
 	}

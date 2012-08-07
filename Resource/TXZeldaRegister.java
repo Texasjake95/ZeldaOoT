@@ -9,6 +9,7 @@ import net.minecraft.src.ModLoader;
 import texasjake95.ZeldaOoT.EntityZeldaBomb;
 import texasjake95.ZeldaOoT.EntityZeldaHorse;
 import texasjake95.ZeldaOoT.ItemBlockZeldaOre;
+import texasjake95.ZeldaOoT.mod_ZeldaOoT;
 import texasjake95.ZeldaOoT.AddOns.AddonHandler;
 import net.minecraft.src.forge.MinecraftForgeClient;
 import net.minecraft.src.forge.oredict.OreDictionary;
@@ -46,14 +47,14 @@ public class TXZeldaRegister extends EasyRegister implements IRegisterHandler{
 		 ModLoader.registerEntityID(EntityZeldaHorse.class, "ZeldaHorse", ModLoader.getUniqueEntityId());
 		
 		 RegisterSound(new ZeldaSoundHandler());
-		
+		 RegisterKey(new mod_ZeldaOoT(), mod_ZeldaOoT.Switch, false);
+		 RegisterKey(new mod_ZeldaOoT(), mod_ZeldaOoT.ShowMana, false);
 	}
 
 	
 
 	@Override
 	public String getModName() {
-		// TODO Auto-generated method stub
 		return "ZeldaOoT";
 	}
 

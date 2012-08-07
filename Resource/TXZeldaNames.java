@@ -72,6 +72,8 @@ public class TXZeldaNames implements INameHandler{
 		
 		AddonHandler.GetNames();
 		
+		ModLoader.addLocalization("Switch", "Switch");
+	    ModLoader.addLocalization("ShowMana", "Show Mana");
 		
 	}
 
