@@ -1,4 +1,4 @@
-package net.minecraft.src.ZeldaOoT.Renders;
+package texasjake95.ZeldaOoT.Renders;
 
 import net.minecraft.src.Entity;
 import net.minecraft.src.ModelBase;

@@ -1,7 +1,7 @@
-package net.minecraft.src.ZeldaOoT.Resource;
+package texasjake95.ZeldaOoT.Resource;
 
 import net.minecraft.src.*;
-import net.minecraft.src.ZeldaOoT.EntityZeldaArrow;
+import texasjake95.ZeldaOoT.EntityZeldaArrow;
 
 
 public class ZeldaDamage

@@ -1,4 +1,4 @@
-package net.minecraft.src.ZeldaOoT;
+package texasjake95.ZeldaOoT;
 import java.util.ArrayList;
 import net.minecraft.src.*;
 import net.minecraft.src.forge.*;

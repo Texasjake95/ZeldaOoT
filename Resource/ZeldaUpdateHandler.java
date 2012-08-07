@@ -1,4 +1,4 @@
-/*package net.minecraft.src.ZeldaOoT.Resource;
+/*package texasjake95.ZeldaOoT.Resource;
 
 import net.minecraft.src.BaseMod;
 import vazkii.um.UpdateManagerMod;

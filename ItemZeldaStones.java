@@ -1,4 +1,4 @@
-package net.minecraft.src.ZeldaOoT;
+package texasjake95.ZeldaOoT;
 import net.minecraft.src.forge.*;
 import net.minecraft.src.*;
 

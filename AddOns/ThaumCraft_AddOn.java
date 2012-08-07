@@ -1,9 +1,9 @@
-package net.minecraft.src.ZeldaOoT.AddOns;
+package texasjake95.ZeldaOoT.AddOns;
 
 import net.minecraft.src.*;
-import net.minecraft.src.ZeldaOoT.*;
-import net.minecraft.src.ZeldaOoT.Resource.ItemMaps;
-import static net.minecraft.src.ZeldaOoT.Resource.ZeldaItems.*;
+import texasjake95.ZeldaOoT.*;
+import texasjake95.ZeldaOoT.Resource.ItemMaps;
+import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
 import net.minecraft.src.thaumcraft.api.*;
 
 public class ThaumCraft_AddOn extends AddonHandler

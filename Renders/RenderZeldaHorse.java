@@ -1,8 +1,8 @@
-package net.minecraft.src.ZeldaOoT.Renders;
+package texasjake95.ZeldaOoT.Renders;
 import org.lwjgl.opengl.GL11;
 
 import net.minecraft.src.*;
-import net.minecraft.src.ZeldaOoT.*;
+import texasjake95.ZeldaOoT.*;
 
 public class RenderZeldaHorse extends RenderLiving
 {

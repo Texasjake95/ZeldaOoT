@@ -1,8 +1,8 @@
-package net.minecraft.src.ZeldaOoT;
+package texasjake95.ZeldaOoT;
 
 import java.util.List;
 import net.minecraft.src.*;
-import net.minecraft.src.ZeldaOoT.Resource.ZeldaDamage;
+import texasjake95.ZeldaOoT.Resource.ZeldaDamage;
 
 public class EntityZeldaArrow extends Entity
 {

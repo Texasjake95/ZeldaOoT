@@ -1,9 +1,9 @@
-package net.minecraft.src.ZeldaOoT.AddOns;
+package texasjake95.ZeldaOoT.AddOns;
 
 import net.minecraft.src.BaseMod;
 import net.minecraft.src.ModLoader;
-import net.minecraft.src.ZeldaOoT.Config;
-import net.minecraft.src.ZeldaOoT.Resource.ZeldaItems;
+import texasjake95.ZeldaOoT.Config;
+import texasjake95.ZeldaOoT.Resource.ZeldaItems;
 
 public class AddonHandler {
 public static boolean IC2 = false;

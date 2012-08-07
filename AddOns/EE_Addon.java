@@ -1,9 +1,9 @@
-package net.minecraft.src.ZeldaOoT.AddOns;
+package texasjake95.ZeldaOoT.AddOns;
 
 import java.lang.reflect.Method;
 
 import net.minecraft.src.ModLoader;
-import net.minecraft.src.ZeldaOoT.Resource.ItemMaps;
+import texasjake95.ZeldaOoT.Resource.ItemMaps;
 
 public class EE_Addon {
 	public static void init() {

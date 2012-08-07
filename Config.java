@@ -1,4 +1,4 @@
-package net.minecraft.src.ZeldaOoT;
+package texasjake95.ZeldaOoT;
 
 
 import java.io.BufferedReader;
@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+import texasjake95.Core.ConfigWriter;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.src.*;

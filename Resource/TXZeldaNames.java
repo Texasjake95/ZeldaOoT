@@ -1,13 +1,14 @@
-package net.minecraft.src.ZeldaOoT.Resource;
+package texasjake95.ZeldaOoT.Resource;
 
+import texasjake95.Core.INameHandler;
 import net.minecraft.src.ItemStack;
 import net.minecraft.src.ModLoader;
-import net.minecraft.src.ZeldaOoT.AddOns.*;
-import static net.minecraft.src.ZeldaOoT.Resource.ZeldaItems.*;
+import texasjake95.ZeldaOoT.AddOns.*;
+import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
 
-public class ZeldaNames {
+public class TXZeldaNames implements INameHandler{
 
-	public static void getNames() {
+	public void getNames() {
 		ModLoader.addName ( new ItemStack(Ocarina, 1,0), "Ocarina of Time - Song of Storms");
 	    ModLoader.addName ( new ItemStack(Ocarina, 1,1), "Ocarina of Time - Sun's Song");
 	    ModLoader.addName ( new ItemStack(Ocarina, 1,2), "Ocarina of Time - Song of Healing");
@@ -72,6 +73,11 @@ public class ZeldaNames {
 		AddonHandler.GetNames();
 		
 		
+	}
+
+	@Override
+	public String getModName() {
+		return "ZeldaOoT";
 	}
 
 }

@@ -1,10 +1,10 @@
-package net.minecraft.src.ZeldaOoT;
+package texasjake95.ZeldaOoT;
 
 import java.util.ArrayList;
 import java.util.Random;
 import net.minecraft.src.*;
 import net.minecraft.src.forge.ITextureProvider;
-import static net.minecraft.src.ZeldaOoT.Resource.ZeldaItems.*;
+import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
 
 public class BlockZeldaOre extends Block implements ITextureProvider{
 

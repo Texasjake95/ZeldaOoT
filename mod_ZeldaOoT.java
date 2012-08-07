@@ -1,15 +1,19 @@
-package net.minecraft.src.ZeldaOoT;
+package texasjake95.ZeldaOoT;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.*;
+
+import texasjake95.Core.RecipeHandler;
+import texasjake95.Core.WorldGenMineableMeta;
+import texasjake95.Core.WorldGenNetherOreMeta;
 import net.minecraft.client.Minecraft;
 import net.minecraft.src.*;
 import net.minecraft.src.forge.*;
-import net.minecraft.src.ZeldaOoT.AddOns.*;
-import net.minecraft.src.ZeldaOoT.Renders.*;
-import net.minecraft.src.ZeldaOoT.Resource.*;
-import static net.minecraft.src.ZeldaOoT.Resource.ZeldaItems.*;
+import texasjake95.ZeldaOoT.AddOns.*;
+import texasjake95.ZeldaOoT.Renders.*;
+import texasjake95.ZeldaOoT.Resource.*;
+import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
 
 
 
@@ -118,13 +122,6 @@ public class mod_ZeldaOoT extends BaseMod
 	public void load() 
 	{		 
 		 //new ZeldaUpdateHandler(this);
-		
-		ZeldaRegister.Register();
-			
-		ZeldaRecipes.GetRecipes();
-   		
-		ZeldaNames.getNames();
-		
 		GetTextures();
 		PlayerAPI.register("ZeldaPlayer", ZeldaPlayer.class);
 		

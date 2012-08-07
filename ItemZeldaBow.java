@@ -1,10 +1,10 @@
-package net.minecraft.src.ZeldaOoT;
+package texasjake95.ZeldaOoT;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.src.*;
 import net.minecraft.src.forge.*;
-import static net.minecraft.src.ZeldaOoT.Resource.ZeldaItems.*;
-import static net.minecraft.src.ZeldaOoT.ZeldaMana.*;
+import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
+import static texasjake95.ZeldaOoT.ZeldaMana.*;
 
 
 public class ItemZeldaBow extends Item implements ITextureProvider

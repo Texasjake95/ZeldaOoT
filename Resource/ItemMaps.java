@@ -1,6 +1,6 @@
-package net.minecraft.src.ZeldaOoT.Resource;
+package texasjake95.ZeldaOoT.Resource;
 
-import static net.minecraft.src.ZeldaOoT.Resource.ZeldaItems.*;
+import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
 
 public class ItemMaps {
 	

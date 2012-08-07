@@ -1,9 +1,9 @@
-package net.minecraft.src.ZeldaOoT.Resource;
+package texasjake95.ZeldaOoT.Resource;
 
 import net.minecraft.src.*;
-import net.minecraft.src.ZeldaOoT.AddOns.AddonHandler;
+import texasjake95.ZeldaOoT.AddOns.AddonHandler;
 import net.minecraft.src.forge.EnumHelper;
-import net.minecraft.src.ZeldaOoT.*;
+import texasjake95.ZeldaOoT.*;
 
 public class ZeldaItems{
 

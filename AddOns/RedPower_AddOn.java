@@ -1,8 +1,8 @@
-package net.minecraft.src.ZeldaOoT.AddOns;
+package texasjake95.ZeldaOoT.AddOns;
 
 import net.minecraft.src.*;
-import net.minecraft.src.ZeldaOoT.*;
-import static net.minecraft.src.ZeldaOoT.Resource.ZeldaItems.*;
+import texasjake95.ZeldaOoT.*;
+import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
 
 
 public class RedPower_AddOn extends AddonHandler {

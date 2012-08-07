@@ -1,8 +1,8 @@
-package net.minecraft.src.ZeldaOoT.AddOns;
+package texasjake95.ZeldaOoT.AddOns;
 
 import codechicken.nei.API;
 import net.minecraft.src.*;
-import static net.minecraft.src.ZeldaOoT.Resource.ZeldaItems.*;
+import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
 import net.minecraft.src.ic2.api.*;
 
 public class IC2_AddOn extends AddonHandler

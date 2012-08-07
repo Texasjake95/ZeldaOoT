@@ -1,9 +1,9 @@
-package net.minecraft.src.ZeldaOoT;
+package texasjake95.ZeldaOoT;
 import java.util.ArrayList;
 import net.minecraft.src.*;
 
 
-import static net.minecraft.src.ZeldaOoT.Resource.ZeldaItems.*;
+import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
 import net.minecraft.src.forge.*;
 
 public class ItemZeldaArmor extends ItemArmor implements ITextureProvider, IArmorTextureProvider
