@@ -4,7 +4,9 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.*;
 
+import texasjake95.Core.NameHandler;
 import texasjake95.Core.RecipeHandler;
+import texasjake95.Core.RegisterHandler;
 import texasjake95.Core.WorldGenMineableMeta;
 import texasjake95.Core.WorldGenNetherOreMeta;
 import net.minecraft.client.Minecraft;
@@ -122,6 +124,10 @@ public class mod_ZeldaOoT extends BaseMod
 	public void load() 
 	{		 
 		 //new ZeldaUpdateHandler(this);
+		RegisterHandler.registerRegisterHandler(new ZeldaRegister());
+		NameHandler.registerNameHandler(new ZeldaNames());
+		RecipeHandler.registerRecipeHandler(new ZeldaRecipes());
+		
 		GetTextures();
 		PlayerAPI.register("ZeldaPlayer", ZeldaPlayer.class);
 		

@@ -1,6 +1,7 @@
 package texasjake95.ZeldaOoT.Resource;
 
 import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
+import texasjake95.ZeldaOoT.*;
 import texasjake95.Core.EasyRegister;
 import texasjake95.Core.IRegisterHandler;
 
@@ -14,7 +15,7 @@ import texasjake95.ZeldaOoT.AddOns.AddonHandler;
 import net.minecraft.src.forge.MinecraftForgeClient;
 import net.minecraft.src.forge.oredict.OreDictionary;
 
-public class TXZeldaRegister extends EasyRegister implements IRegisterHandler{
+public class ZeldaRegister extends EasyRegister implements IRegisterHandler{
 
 	public void Register() 
 	{
@@ -49,13 +50,6 @@ public class TXZeldaRegister extends EasyRegister implements IRegisterHandler{
 		 RegisterSound(new ZeldaSoundHandler());
 		 RegisterKey(new mod_ZeldaOoT(), mod_ZeldaOoT.Switch, false);
 		 RegisterKey(new mod_ZeldaOoT(), mod_ZeldaOoT.ShowMana, false);
-	}
-
-	
-
-	@Override
-	public String getModName() {
-		return "ZeldaOoT";
 	}
 
 }

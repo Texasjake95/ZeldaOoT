@@ -44,6 +44,7 @@ public class Config extends ConfigWriter{
 	public static boolean CopperGen;
 	public static boolean TinGen;
 	public static boolean NetherGen;
+	public static boolean InitZelda;
 	
 		public static void initIC2Props()
 	{
@@ -163,7 +164,6 @@ public class Config extends ConfigWriter{
         NetherGen = BooleanConfig("Nether Generation", config, true, 3, "World Gen");
      
         config.save();
-      
 	}
 	
 	

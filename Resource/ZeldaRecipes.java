@@ -7,7 +7,7 @@ import net.minecraft.src.forge.oredict.*;
 import net.minecraft.src.*;
 import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
 
-public class TXZeldaRecipes extends EasyRecipes implements IRecipeHandler{
+public class ZeldaRecipes extends EasyRecipes implements IRecipeHandler{
 
 	public void getRecipes() {
 		 	addRecipe(new ItemStack(Ocarina, 1, 3), new Object[] { "XYX","XXX","X  ", 'X', Block.glass, 'Y', Item.diamond});
@@ -40,9 +40,4 @@ public class TXZeldaRecipes extends EasyRecipes implements IRecipeHandler{
 	}
 	
 	
-	@Override
-	public String getModName() {
-		// TODO Auto-generated method stub
-		return "ZeldaOoT";
-	}
 }

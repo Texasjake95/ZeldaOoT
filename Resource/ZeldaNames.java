@@ -6,7 +6,7 @@ import net.minecraft.src.ModLoader;
 import texasjake95.ZeldaOoT.AddOns.*;
 import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
 
-public class TXZeldaNames implements INameHandler{
+public class ZeldaNames implements INameHandler{
 
 	public void getNames() {
 		ModLoader.addName ( new ItemStack(Ocarina, 1,0), "Ocarina of Time - Song of Storms");
@@ -58,11 +58,11 @@ public class TXZeldaNames implements INameHandler{
 		ModLoader.addLocalization("ItemBlockZeldaOreXXX3.name", "Sapphire Ore");
 		ModLoader.addLocalization("ItemBlockZeldaOreXXX4.name", "Copper Ore");
 		ModLoader.addLocalization("ItemBlockZeldaOreXXX5.name", "Tin Ore"); 
-		ModLoader.addLocalization("ItemBlockZeldaOreXXX6.name", "Emerald Ore");
-		ModLoader.addLocalization("ItemBlockZeldaOreXXX7.name", "Ruby Ore");
-		ModLoader.addLocalization("ItemBlockZeldaOreXXX8.name", "Sapphire Ore");
-		ModLoader.addLocalization("ItemBlockZeldaOreXXX9.name", "Copper Ore"); 
-		ModLoader.addLocalization("ItemBlockZeldaOreXXX10.name", "Tin Ore");
+		ModLoader.addLocalization("ItemBlockZeldaOreXXX6.name", "Emerald Ore(N)");
+		ModLoader.addLocalization("ItemBlockZeldaOreXXX7.name", "Ruby Ore(N)");
+		ModLoader.addLocalization("ItemBlockZeldaOreXXX8.name", "Sapphire Ore(N)");
+		ModLoader.addLocalization("ItemBlockZeldaOreXXX9.name", "Copper Ore(N)"); 
+		ModLoader.addLocalization("ItemBlockZeldaOreXXX10.name", "Tin Ore(N)");
 		ModLoader.addLocalization("ItemBlockZeldaOreXXX11.name", "Coal Ore");
 		ModLoader.addLocalization("ItemBlockZeldaOreXXX12.name", "Iron Ore");
 		ModLoader.addLocalization("ItemBlockZeldaOreXXX13.name", "Gold Ore"); 
@@ -77,9 +77,6 @@ public class TXZeldaNames implements INameHandler{
 		
 	}
 
-	@Override
-	public String getModName() {
-		return "ZeldaOoT";
-	}
+	
 
 }
