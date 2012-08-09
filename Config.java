@@ -164,6 +164,7 @@ public class Config extends ConfigWriter{
         NetherGen = BooleanConfig("Nether Generation", config, true, 3, "World Gen");
      
         config.save();
+        InitZelda = CoreConfig(mod);
 	}
 	
 	

@@ -1,6 +1,6 @@
 package texasjake95.ZeldaOoT.Resource;
 
-import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
+import static texasjake95.ZeldaOoT.Config.*;
 
 public class ItemMaps {
 	
@@ -44,22 +44,22 @@ public class ItemMaps {
 
 	public static int[] ItemList = new int[]
 	                      {
-		 swordMaster.shiftedIndex,
-		 Gems.shiftedIndex,
-		 SpiritualStones.shiftedIndex,
-		 ClothSheet.shiftedIndex,
-		 swordKokiri.shiftedIndex,
-		 //swordGuilded.shiftedIndex,
-		 //swordRazor.shiftedIndex,
-		 helmetGZelda.shiftedIndex,
-		 plateGZelda.shiftedIndex,
-		 legsGZelda.shiftedIndex,
-		 bootsGZelda.shiftedIndex,
-		 plateRZelda.shiftedIndex,
-		 plateBZelda.shiftedIndex,
-		 bootsBZelda.shiftedIndex,
-		 HeroBow.shiftedIndex,
-		 Ocarina.shiftedIndex
+		 swordMasterShiftedIndex - 256,
+		 GemsShiftedIndex - 256,
+		 SpiritualStonesShiftedIndex - 256,
+		 ClothSheetShiftedIndex - 256,
+		 swordKokiriShiftedIndex - 256,
+		 //swordGuildedShiftedIndex - 256,
+		 //swordRazorShiftedIndex - 256,
+		 helmetGZeldaShiftedIndex - 256,
+		 plateGZeldaShiftedIndex - 256,
+		 legsGZeldaShiftedIndex - 256,
+		 bootsGZeldaShiftedIndex - 256,
+		 plateRZeldaShiftedIndex - 256,
+		 plateBZeldaShiftedIndex - 256,
+		 bootsBZeldaShiftedIndex - 256,
+		 HeroBowShiftedIndex - 256,
+		 OcarinaShiftedIndex - 256
 	                      };
 	public static int[] EMC = new int []
 	                                   {

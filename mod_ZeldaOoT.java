@@ -30,7 +30,8 @@ public class mod_ZeldaOoT extends BaseMod
 	public static KeyBinding Switch = new KeyBinding("Switch", 19);
 	public static KeyBinding ShowMana = new KeyBinding("Show Mana", 50);
 	public void keyboardEvent(KeyBinding keybinding)
-	    {World world = mc.theWorld;
+	    {if (Config.InitZelda == true)
+		{World world = mc.theWorld;
 	   ItemStack itemStack = mc.thePlayer.inventory.getCurrentItem();
 	    if(keybinding == Switch)
 	    {	if (world != null){
@@ -106,14 +107,19 @@ public class mod_ZeldaOoT extends BaseMod
 	    {
 	    	mc.thePlayer.addChatMessage("Current Mana: "+ZeldaPlayer.Mana.getCurrentMana()+"");
 	    }
+		}
 	    }
 		
 	
 	
 	@Override
 	public String getVersion() {
-		
-		return "Beta 1.0.0 for Minecraft 1.2.5";
+		String Version = null;
+		if (Config.InitZelda == true)
+		{Version = "Beta 1.0.0 for Minecraft 1.2.5";}
+		if (Config.InitZelda == false)
+		{Version = "Mod Not Loaded";}
+		return Version;
 	}
 	@Override
 	 public String getPriorities()
@@ -122,8 +128,11 @@ public class mod_ZeldaOoT extends BaseMod
     }
 
 	public void load() 
-	{		 
+	{		Config.initProps("ZeldaOoT"); 
 		 //new ZeldaUpdateHandler(this);
+		if (Config.InitZelda == true)
+		{
+		ZeldaItems.Init();
 		RegisterHandler.registerRegisterHandler(new ZeldaRegister());
 		NameHandler.registerNameHandler(new ZeldaNames());
 		RecipeHandler.registerRecipeHandler(new ZeldaRecipes());
@@ -135,8 +144,10 @@ public class mod_ZeldaOoT extends BaseMod
 	    ModLoader.setInGameHook(this, true, true);
 	    ModLoader.setInGUIHook(this, true, true);
 	}
+	}
 	public void modsLoaded() {
-	   EE_Addon.getEMC();
+		if (Config.InitZelda == true)
+		{if (ZeldaItems.isLoaded = true){EE_Addon.getEMC();}
 	   AddonHandler.initAddons();
 		if (AddonHandler.IC2 == true)
 		{
@@ -146,7 +157,7 @@ public class mod_ZeldaOoT extends BaseMod
 		{
 			Config.initRP2Props();
 		}
-		
+		}
 	  	}
 	private void GetTextures() {
 
@@ -161,6 +172,7 @@ public class mod_ZeldaOoT extends BaseMod
 		
 	}
 	public boolean onTickInGame(float time, Minecraft minecraftInstance)
+	{if (Config.InitZelda == true)
 	{
 		Minecraft mc = ModLoader.getMinecraftInstance();
 		ItemStack a1 = mc.thePlayer.inventory.armorInventory[3];
@@ -220,21 +232,20 @@ public class mod_ZeldaOoT extends BaseMod
 		
 	return true;
 			
-		
+	}
+	return false;
     }
     public void addRenderer(Map map)
-    {ModelZeldaHorse horse = new ModelZeldaHorse();
+    {if (Config.InitZelda == true)
+	{ModelZeldaHorse horse = new ModelZeldaHorse();
                    map.put(EntityZeldaArrow.class, new RenderZeldaArrow());
                    map.put(EntityZeldaBomb.class, new RenderZeldaBomb());
                    map.put(EntityZeldaHorse.class, new RenderZeldaHorse(horse, 0));
-                   
+	}  
     }
-    static {
-		Config.initProps("ZeldaOoT");
-		
-	}
 	public void generateSurface(World world, Random random, int chunkX, int chunkZ)
-    {
+    {if (Config.InitZelda == true)
+	{
 		if (AddonHandler.RPW == false & Config.GemGen == true)
 		   {
         for(int l = 0; l < 13; l++)
@@ -283,9 +294,11 @@ public class mod_ZeldaOoT extends BaseMod
          }
 		}
 	}
+	}
 	public void generateNether(World world, Random random, int chunkX, int chunkZ)
     {
-		
+		if (Config.InitZelda == true)
+		{
 		if (Config.NetherGen == true)
 		{
 		//Nether Emerald
@@ -375,6 +388,7 @@ public class mod_ZeldaOoT extends BaseMod
 		       
 		
 	}
+    }
 	
 	
 	 Minecraft mc = ModLoader.getMinecraftInstance(); 

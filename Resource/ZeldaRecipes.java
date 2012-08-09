@@ -10,9 +10,9 @@ import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
 public class ZeldaRecipes extends EasyRecipes implements IRecipeHandler{
 
 	public void getRecipes() {
-		 	addRecipe(new ItemStack(Ocarina, 1, 3), new Object[] { "XYX","XXX","X  ", 'X', Block.glass, 'Y', Item.diamond});
-			addRecipe(new ItemStack(HeroBow, 1, 0), new Object[] { "XYZ","Y Z","XYZ", 'X', Item.goldNugget, 'Y', Item.stick, 'Z', Item.silk});
-			addRecipe(new ItemStack(HeroBow, 1, 0), new Object[] { " X","XY", 'X', Item.goldNugget, 'Y', Item.bow});
+		addRecipe(new ItemStack(Ocarina, 1, 3), new Object[] { "XYX","XXX","X  ", 'X', Block.glass, 'Y', Item.diamond});
+		 addRecipe(new ItemStack(HeroBow, 1, 0), new Object[] { "XYZ","Y Z","XYZ", 'X', Item.goldNugget, 'Y', Item.stick, 'Z', Item.silk});
+		 addRecipe(new ItemStack(HeroBow, 1, 0), new Object[] { " X","XY", 'X', Item.goldNugget, 'Y', Item.bow});
 			
 			ForgeOre(new ItemStack(SpiritualStones, 1,1),  "XYX","XXX","YXY", 'X', Item.goldNugget, 'Y', "gemSapphire");
 			ForgeOre(new ItemStack(SpiritualStones, 1,0),  "XYX","XYX","XYX", 'X', Item.goldNugget, 'Y', "gemRuby");
@@ -35,6 +35,7 @@ public class ZeldaRecipes extends EasyRecipes implements IRecipeHandler{
 
 						
 			addRecipe(new ItemStack(swordKokiri), new Object[] { " X ","YYY", 'X', Item.ingotIron, 'Y', Item.stick});
+			
 			  //TODO Add recipes for Razor and Guilded
 			AddonHandler.GetRecipes();
 	}

@@ -19,7 +19,7 @@ public class ZeldaRegister extends EasyRegister implements IRegisterHandler{
 
 	public void Register() 
 	{
-
+		
 		 RegisterOre("gemEmerald", new ItemStack(Gems,1,0));
 		 RegisterOre("gemRuby", new ItemStack(Gems,1,1));
 		 RegisterOre("gemSapphire", new ItemStack(Gems,1,2));

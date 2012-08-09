@@ -3,6 +3,7 @@ package texasjake95.ZeldaOoT.AddOns;
 import java.lang.reflect.Method;
 
 import net.minecraft.src.ModLoader;
+import texasjake95.ZeldaOoT.Config;
 import texasjake95.ZeldaOoT.Resource.ItemMaps;
 
 public class EE_Addon {
@@ -21,7 +22,7 @@ public class EE_Addon {
 	}
 
 	public static void getEMC() {
-		if(AddonHandler.EE2 == true) 
+		if(AddonHandler.EE2 == true & Config.InitZelda == true) 
 		   {
 		   try {
 		   
@@ -39,7 +40,10 @@ public class EE_Addon {
 	    } catch (Exception ex) {
 	    }
 	  }
-		
+		else
+		{
+			
+		}
 	}
 
 }

@@ -25,7 +25,7 @@ public class ZeldaNames implements INameHandler{
 	    ModLoader.addName ( new ItemStack(HeroBow, 1,2), "Hero's Bow - Ice");
 	    ModLoader.addName ( new ItemStack(HeroBow, 1,3), "Hero's Bow - Bomb");
 	    
-	    ModLoader.addName ( helmetGZelda, "Green Hood");
+	    ModLoader.addName ( helmetGZelda , "Green Hood");
 		ModLoader.addName ( plateGZelda, "Green Tunic");
 		ModLoader.addName ( legsGZelda, "Tunic Leggings");
 		ModLoader.addName ( bootsGZelda, "Tunic Boots");
