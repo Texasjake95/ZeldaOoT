@@ -54,7 +54,7 @@ public class ZeldaItems{
     public static  Item Bomb;
 
 
-	public static boolean isLoaded = false;
+	
     static{
     	AddonHandler.Blocks();
     	AddonHandler.Items();
@@ -73,7 +73,7 @@ if (Config.InitZelda == true)
 			   SpiritualStones = (new ItemZeldaStones(Config.SpiritualStonesShiftedIndex-256)).setIconCoord(3,0).setItemName("Stones");
 			  ClothSheet = (new ItemZelda(Config.ClothSheetShiftedIndex-256)).setIconCoord(6,0).setItemName("ClothSheet");			
 			   
-			   swordKokiri = (new ItemZeldaSword(Config.swordKokiriShiftedIndex-256, KokiriSword)).setIconCoord(7, 0).setItemName("swordCopper");
+			   swordKokiri = (new ItemZeldaSword(Config.swordKokiriShiftedIndex-256, KokiriSword)).setIconCoord(7, 0).setItemName("swordKokiri");
 			   swordRazor = (new ItemZeldaSword(Config.swordRazorShiftedIndex-256, RazorSword)).setIconCoord(8,0).setItemName("swordRazor");
 		       swordGuilded = (new ItemZeldaSword(Config.swordGuildedShiftedIndex-256, GuildedSword)).setIconCoord(9,0).setItemName("swordGuilded");
 		    
@@ -92,7 +92,7 @@ if (Config.InitZelda == true)
 			   HeroBow = (new ItemZeldaBow(Config.HeroBowShiftedIndex-256)).setIconCoord(8,1).setItemName("HeroBow");
 		       Ocarina= (new ItemZeldaOcarina(Config.OcarinaShiftedIndex-256)).setIconCoord(11,1).setItemName("Ocarina");
 		       Bomb= (new ItemZeldaBomb(Config.ZeldaBombItemShiftedIndex-256)).setIconCoord(0,2).setItemName("Bomb");
-		       isLoaded = true;
+		       
 }
     }
 }

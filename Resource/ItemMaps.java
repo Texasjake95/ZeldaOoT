@@ -1,6 +1,7 @@
 package texasjake95.ZeldaOoT.Resource;
 
-import static texasjake95.ZeldaOoT.Config.*;
+import static texasjake95.ZeldaOoT.Resource.ZeldaItems.*;
+import net.minecraft.src.Item;
 
 public class ItemMaps {
 	
@@ -42,24 +43,24 @@ public class ItemMaps {
 	public static float HeroBowVis = 18F;
 	public static float OcarinaVis = 70F;
 
-	public static int[] ItemList = new int[]
+	public static Item[] ItemList = new Item[]
 	                      {
-		 swordMasterShiftedIndex - 256,
-		 GemsShiftedIndex - 256,
-		 SpiritualStonesShiftedIndex - 256,
-		 ClothSheetShiftedIndex - 256,
-		 swordKokiriShiftedIndex - 256,
-		 //swordGuildedShiftedIndex - 256,
-		 //swordRazorShiftedIndex - 256,
-		 helmetGZeldaShiftedIndex - 256,
-		 plateGZeldaShiftedIndex - 256,
-		 legsGZeldaShiftedIndex - 256,
-		 bootsGZeldaShiftedIndex - 256,
-		 plateRZeldaShiftedIndex - 256,
-		 plateBZeldaShiftedIndex - 256,
-		 bootsBZeldaShiftedIndex - 256,
-		 HeroBowShiftedIndex - 256,
-		 OcarinaShiftedIndex - 256
+		 swordMaster,
+		 Gems,
+		 SpiritualStones,
+		 ClothSheet,
+		 swordKokiri,
+		 //swordGuilded,
+		 //swordRazor,
+		 helmetGZelda,
+		 plateGZelda,
+		 legsGZelda,
+		 bootsGZelda,
+		 plateRZelda,
+		 plateBZelda,
+		 bootsBZelda,
+		 HeroBow,
+		 Ocarina
 	                      };
 	public static int[] EMC = new int []
 	                                   {

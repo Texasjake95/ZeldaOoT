@@ -100,9 +100,29 @@ public class BlockZeldaOre extends Block implements ITextureProvider{
 			return"/ZeldaOoT/Resources/Blocks.png"; 
 		}
 
-	public void addCreativeItems(ArrayList itemList)
-	{
-		itemList.add(new ItemStack(this));
-	}
+		public void addCreativeItems(ArrayList itemList)
+		{
+			if (Config.ShowBlocks == true)
+		   {itemList.add(new ItemStack(this,1,0));
+		   itemList.add(new ItemStack(this,1,1));
+			itemList.add(new ItemStack(this,1,2));
+			itemList.add(new ItemStack(this,1,3));
+			itemList.add(new ItemStack(this,1,4));
+			itemList.add(new ItemStack(this,1,5));
+			itemList.add(new ItemStack(this,1,6));
+			itemList.add(new ItemStack(this,1,7));
+			itemList.add(new ItemStack(this,1,8));
+			itemList.add(new ItemStack(this,1,9));
+			itemList.add(new ItemStack(this,1,10));
+			itemList.add(new ItemStack(this,1,11));
+			itemList.add(new ItemStack(this,1,12));
+			itemList.add(new ItemStack(this,1,13));
+			itemList.add(new ItemStack(this,1,14));
+			itemList.add(new ItemStack(this,1,15));
+		   }
+			else
+			{itemList.add(new ItemStack(this));}
+		}
+		
 
 }

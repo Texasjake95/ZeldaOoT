@@ -147,7 +147,7 @@ public class mod_ZeldaOoT extends BaseMod
 	}
 	public void modsLoaded() {
 		if (Config.InitZelda == true)
-		{if (ZeldaItems.isLoaded = true){EE_Addon.getEMC();}
+		{EE_Addon.getEMC();
 	   AddonHandler.initAddons();
 		if (AddonHandler.IC2 == true)
 		{

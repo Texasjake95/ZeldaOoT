@@ -33,9 +33,9 @@ public class EE_Addon {
 	      for (int x = 0; x < ItemMaps.EMC.length + 1; x++)
 	      {
 	      // for each EMC value
-	      addEMC.invoke(null, ItemMaps.ItemList[x], 0, ItemMaps.EMC[x]);
+	      addEMC.invoke(null, ItemMaps.ItemList[x].shiftedIndex, 0, ItemMaps.EMC[x]);
 	      // for each block
-	      addMeta.invoke(null, ItemMaps.ItemList[x], 0);}
+	      addMeta.invoke(null, ItemMaps.ItemList[x].shiftedIndex, 0);}
 	      
 	    } catch (Exception ex) {
 	    }

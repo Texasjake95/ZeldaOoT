@@ -15,6 +15,7 @@ import net.minecraft.src.forge.*;
 
 public class Config extends ConfigWriter{
 
+	public static boolean ShowBlocks;
 	public static Configuration config;
 	public static int oreBlockBlockID;
 	public static int swordMasterShiftedIndex;
@@ -157,7 +158,7 @@ public class Config extends ConfigWriter{
         OcarinaShiftedIndex = ItemConfig("Ocarina of Time",  config, 8015);
         ArrowPowers = BooleanConfig("Arrow Powers", config, false);
         ZeldaBombItemShiftedIndex = ItemConfig("Bomb",  config, 8016);
-        
+        ShowBlocks = BooleanConfig("Show All Ore Blocks in Creative mode", config, false);
         GemGen = BooleanConfig("Gem Generation", config, true, 3, "World Gen");
         CopperGen = BooleanConfig("Copper Generation", config, true, 3, "World Gen");
         TinGen = BooleanConfig("Tin Generation", config, true, 3, "World Gen");
